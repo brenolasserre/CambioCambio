@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&display=swap');
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #666666;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #454545;
+}
+
+/* Estilos generales */
+* {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+body {
+    background-color: #101010;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8em 0 4em 0;
+    gap: 1em;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.cards {
+    background-color: #141414;
+    border-radius: 1rem;
+    width: 22%;
+    padding: 1.5em;
+    text-align: center;
+    outline: 1px solid #282828;
+    transition: background .08s linear;
+}
+
+.cards:hover {
+    background-color: #1c1c1c;
+    cursor: pointer;
+}
+
+.cards:nth-child(1), .cards:nth-child(2){
+    outline: 1px solid #4d4d4d;
+}
+
+.valores span {
+    font-size: 22.5px !important;
+    margin: 0.35em;
+}
+
+.valores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+p {
+    font-size: 18px;
+    color: #838383;
+}
+
+a {
+    text-decoration: none;
+}
+
+.vC {
+    background: #0f0f0f;
+    padding: 0.2em;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#navBar {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    font-size: 12px;
+    padding: 2em 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    align-items: center;
+    z-index: 999;
+}
+
+#navBar span {
+    color: #b7b4b4;
+    margin: 0 .5em;
+}
+
+.logo {
+    margin: 0 5em 0 0;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 600;
+}
+
+.logo img {
+    width: 11%;
+}
+
+.valores span:nth-child(1){
+    color: #c0c0c0 !important;
+}
+
+.variacion {
+    color: white;
+    border-radius: 10px;
+    width: 22%;
+    padding: 4px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}
+
+.positive-bg {
+    background-color: #2965BE;
+}
+  
+.negative-bg {
+    background-color: #7E1D1D;
+}
+  
+.zero-bg {
+    background-color: #0f0f0f;
+}  
+
+.null{
+    display: inline-block;
+    width: 50px !important;
+    background-color: #0F0F0F;
+    padding: 4px;
+    height: 10px !important;
+    margin: 0 !important;
+    border-radius: 5px;
+}
+
+.euroBlueValor, .ultimaActualizacion {
+    display: flex;
+    align-items: center;
+    width: 10%;
+    gap: 5px;
+}
+
+#mercado {
+    background-color: #2965be;
+    color: #a2ff91 !important;
+    padding: 10px;
+    border-radius: 22px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#mercado.cerrado {
+    background-color: #7e1d1d;
+    padding: 10px;
+    border-radius: 22px;
+}
+
+.status {
+    position: relative;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.status:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in;
+}
+
+.online,
+.online:before {
+    background: #77aeff;
+}
+
+.offline,
+.offline:before {
+    background: #ff4242;
+    color: black !important;
+}
+
+/* Footer */
+footer {
+    background: #0e0e0e;
+    padding: 2em;
+    text-align: center;
+}
+
+footer p  {
+    font-size: 15px;
+}
+
+#year {
+    color: #838383;
+}
+
+.bi-github {
+    margin-left: .5em;
+}
+
+#text {
+    white-space: nowrap;
+}
+
+#cero{
+    background-color: #0f0f0f;
+    color: white;
+    border-radius: 10px;
+    width: 22%;
+    padding: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+i {
+    margin-top: 1px;
+}
+
+.mobileInfo {
+    display: none;
+    border-radius: 1rem;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 0.4em;
+}
+
+.mobileBottom {
+    display: none;
+}
+
+.extra {
+    color: #b7b4b4;
+    font-size: 13.5px;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.mobileInfo .title p {
+    display: inline-block;
+    margin: 0.2em 0;
+}
+
+.mobileInfo .cards {
+    padding: 1.2em 1.5em;
+    background: #191919;
+}
+
+button {
+    background: #1a1a1a;
+    border: 0;
+    padding: 0.5em 2em;
+    border-radius: 20px;
+    outline: 1px solid #282828;
+}
+
+/* Media queries */
+@media (max-width: 1250px) {
+    .cards {
+        border-radius: 1rem;
+        width: 80%;
+        padding: 1em 1.5em;
+        text-align: left;
+    }
+    #navBar {
+        width: 85%;
+        gap: 0.1em;
+        padding: 2em 4em;
+        font-size: 9px !important;
+    }
+    .vC {
+        padding: 0.4em 0.6em;
+        border-radius: 15px;
+        width: auto;
+    }
+    .valores span {
+        font-size: 27px !important;
+        margin: 0 0.35em 0 0;
+    }
+    .title{
+        justify-content: left !important;
+    }
+    .valores{
+        margin-top: 5px;
+        justify-content: space-around;
+    }
+    .variacion{
+        width: 24% !important;
+    }
+    #mercado.cerrado {
+        padding: 7px !important;
+        margin-right: 1.5em;
+    }
+    .status:before {
+        left: -14px;
+        top: -7px;
+    }
+    .brecha, .riesgoPais, .euroBlueValor, .ultimaActualizacion {
+        display: none;
+    }
+    .logo {
+        margin: 0 2em 0 0 !important;
+    }
+    .mobileInfo {
+        display: flex;
+    }
+    section {
+        padding: 6em 0 4em 0;
+    }
+    .mobileBottom {
+        display: flex;
+        flex-direction: column;
+    }
+} 
+
+@keyframes pulse {
+    from {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
