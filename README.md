@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="img/icon2.svg" alt="Logo" width="80" height="80">
+  </a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <h3 align="center">CambioCambio</h3>
 
-Currently, two official plugins are available:
+  <p align="center">
+    Obtene las diferentes cotizaciones del dolar en tiempo real entre otras cosas.
+    <br />
+    <a href="https://cambiocambio.vercel.app/"><strong>Visitar la pagina »</strong></a>
+    <br />
+  </p>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Acerca De
+Muestra las diferentes cotizaciones del dolar en Argentina en tiempo real y la variacion de % en las ultimas 24hs usando diferentes APIs publicas.   
+Tambien se puede visualizar la brecha entre el dolar oficial y el dolar blue como tambien si el mercado de operaciones está abierto o cerrado.
 
-## Expanding the ESLint configuration
+APIs Usadas:
+* <a href="https://dolarapi.com">Dolar Api</a>
+* <a href="https://bluelytics.com.ar/">Bluelytics</a>
+* <a href="https://github.com/francocarballar/argentina-monetary-quotes-api">argentina-monetary-quotes-api</a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br>
 
-- Configure the top-level `parserOptions` property like this:
+## Roadmap
+- [x] Diseño responsive
+- [x] Fetch APIs
+- [x] Mercado Abierto/Cerrado
+- [ ] Skeleton Loader con React
+- [ ] Twitter Bot
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+<br>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Contacto
+<p align="center">
+Breno Lassserre &nbsp; &nbsp;lasserrebreno@gmail.com  <br>
+<a href="https://twitter.com/lasserrebreno"><strong>Twitter »</strong></a>
+<a href="https://www.linkedin.com/in/breno-lasserre-8b8586278/"><strong>Linkedin »</strong></a>
+</p>
+
+<p align="center">(<a href="#readme-top">Volver Arriba</a>)</p>

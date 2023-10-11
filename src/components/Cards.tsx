@@ -2,11 +2,32 @@ import { useEffect, useState } from "react";
 import SkeletonCard from '../skeletons/SkeletonCard.tsx';
 import '../index.css';
 
+interface CardType {
+  nombre: string; 
+  compra: number | null; 
+  venta: number;   
+}
+interface CryptoType {
+  ask: number;
+  bid: number;
+}
+interface VariacionType {
+  blue_var: number;
+  mep_var: number;
+  ccl_var: number;
+  ccb_var: number;
+}
+// Cards
 const Cards = () => {
   const [cards, setCards] = useState<CardType[]>([]);
-  const [variacion, setVariacion] = useState<VariacionType[]>([]);
-  const [cryptoUSD, setCryptoUSD] = useState<CryptoType | null>(null);  
+  const [cryptoUSD, setCryptoUSD] = useState<CryptoType | null>(null);
   const [loading, setLoading] = useState(true);
+  const [variacion, setVariacion] = useState<VariacionType>({
+    blue_var: 0,
+    mep_var: 0,
+    ccl_var: 0,
+    ccb_var: 0,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,13 +42,12 @@ const Cards = () => {
         const cryptoUSDRate = await fetch('https://criptoya.com/api/buenbit/usdt/ars/0.1').then((res) => res.json());
         setCryptoUSD(cryptoUSDRate);
 
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false); // Set loading to false when data is succesfully fetched
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
@@ -38,17 +58,8 @@ const Cards = () => {
     { value: variacion.mep_var || '0.00', label: 'MEP Var' },
     { value: variacion.ccl_var || '0.00', label: 'CCL Var' },
     { value: '0.00', label: 'Empty' },
-  ];
-
-  interface VariacionType {
-    blue_var: number;
-    mep_var: number;
-    ccl_var: number;
-    ccb_var: number;
-  }
+  ]; 
   
-  console.log(variacion);
-
   return (
     <section>
       {/* While the apis are being loaded, return 6 Skeleton cards*/}
@@ -65,18 +76,18 @@ const Cards = () => {
             ) : (
               <p>Dolar <span>{card.nombre}</span></p>
             )}
-            <p className={`variacion ${cardVariationMap[index].value === '0.00' ? 'zero-bg' : cardVariationMap[index].value > 0 ? 'positive-bg' : 'negative-bg'}`}>
-              {cardVariationMap[index].value > 0 ? (
+            <p className={`variacion ${parseFloat(cardVariationMap[index].value as string) === 0 ? 'zero-bg' : parseFloat(cardVariationMap[index].value as string) > 0 ? 'positive-bg' : 'negative-bg'}`}>
+              {parseFloat(cardVariationMap[index].value as string) > 0 ? (
                 <i className="bi bi-arrow-up-short"></i>
-              ) : cardVariationMap[index].value < 0 ? (
+              ) : parseFloat(cardVariationMap[index].value as string) < 0 ? (
                 <i className="bi bi-arrow-down-short"></i>
               ) : null}
               {cardVariationMap[index].value}%
             </p>
           </span>
           <p className="valores">
-            <span>{card.compra ? `${parseFloat(card.compra).toFixed(2)}$` : <span className="null"> </span>}</span> / <span>{parseFloat(card.venta).toFixed(2)}$</span>
-          </p>
+          <span>{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / <span>{card.venta.toFixed(2)}$</span>
+         </p>
           <p className="vC">Compra / Venta</p>
         </div>
       ))}
@@ -97,7 +108,7 @@ const Cards = () => {
             </p>
           </span>
           <p className="valores">
-            <span>{cryptoUSD.ask ? `${parseFloat(cryptoUSD.ask).toFixed(2)}$` : ''}</span> / <span>{parseFloat(cryptoUSD.bid).toFixed(2)}$</span>
+          <span>{cryptoUSD && `${cryptoUSD.ask.toFixed(2)}$`}</span> / <span>{cryptoUSD && cryptoUSD.bid.toFixed(2)}$</span>
           </p>
           <p className="vC">Compra / Venta</p>
         </div>
