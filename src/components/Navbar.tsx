@@ -1,12 +1,4 @@
-import SkeletonElement from "../skeletons/SkeletonElement";
-
-interface NavbarProps {
-  euroBlueValue: string;
-  date: string;
-}
-
-function Navbar({ euroBlueValue, date }: NavbarProps) {
-  const isDataLoaded = euroBlueValue !== '' && date !== '';
+function Navbar() {
 
   // If market for usd is open (weekdays and 10-16) change color
   const currentTime = new Date();
@@ -21,20 +13,7 @@ function Navbar({ euroBlueValue, date }: NavbarProps) {
     <>
     <div id="navBar">
       <h3 className="logo"><img src="/icon2.svg" alt="Cambio Cambio Icon" /> CambioCambio</h3>
-      <span className="euroBlueValor">
-        Euro Blue: &nbsp;{isDataLoaded
-          ? euroBlueValue === ''
-            ? <SkeletonElement type={"line"} />
-            : `${euroBlueValue}€`
-          : <SkeletonElement type={"line"} />}
-      </span>
-      <span className="ultimaActualizacion">
-        Actualizado&nbsp; {isDataLoaded
-          ? date === ''
-            ? <SkeletonElement type={"line"} />
-            : `${date}`
-          : <SkeletonElement type={"line"} />}
-      </span>
+  
 
       <span id="mercado" className={mercadoClass}>
         <span className={`status ${isMarketOpen ? 'online' : 'offline'}`}></span>

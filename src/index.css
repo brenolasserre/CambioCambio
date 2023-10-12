@@ -97,15 +97,12 @@ a {
 
 #navBar {
     display: flex;
-    justify-content: center;
-    gap: 2em;
+    justify-content: space-evenly;
+    gap: 10rem;
     font-size: 12px;
     padding: 2em 0;
     width: 100%;
-    text-align: center;
     position: fixed;
-    top: 0;
-    margin: 0;
     background: transparent;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
@@ -165,13 +162,6 @@ a {
     height: 8px !important;
     margin: 0 !important;
     border-radius: 5px;
-}
-
-.euroBlueValor, .ultimaActualizacion {
-    display: flex;
-    align-items: center;
-    width: 10%;
-    gap: 5px;
 }
 
 #mercado {
@@ -243,24 +233,8 @@ footer p  {
 i {
     margin-top: 1px;
 }
-
-button {
-    background: var(--lightBackground);
-    border: 0;
-    padding: 0.5em 2em;
-    border-radius: var(--borderRadius);
-    font-size: 16px;
-}
-
-.mobileBottom {
-    display: none;
-}
-
-.extra {
-    color: #b7b4b4;
-    font-size: 13.5px;
-    text-align: center;
-    border-radius: var(--borderRadius);
+.actualizacion {
+    font-size: 14px;
 }
 
 /* Media queries */
@@ -277,7 +251,7 @@ button {
     #navBar {
         width: 85%;
         gap: 0.1em;
-        padding: 2em 4em;
+        padding: 2.5em 4em;
         font-size: 9px !important;
     }
     .vC {
