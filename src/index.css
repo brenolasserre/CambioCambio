@@ -163,7 +163,7 @@ a {
 
 .null{
     display: inline-block;
-    width: 90% !important;
+    width: 6rem !important;
     background-color: #0F0F0F;
     padding: 4px;
     height: 8px !important;
@@ -253,7 +253,7 @@ button {
     border: 0;
     padding: 0.5em 2em;
     border-radius: var(--borderRadius);
-    outline: 1px solid var(--borderColor);
+    font-size: 16px;
 }
 
 .mobileBottom {
@@ -270,7 +270,6 @@ button {
 /* Media queries */
 @media (max-width: 950px) {
     .null{
-        width: 6rem !important;
         height: 12px !important;
     }    
     .cards {

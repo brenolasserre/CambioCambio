@@ -86,7 +86,7 @@ const Cards = () => {
             </p>
           </span>
           <p className="valores">
-          <span className="nullSpan">{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / <span>{card.venta.toFixed(2)}$</span>
+          <span className="nullSpan">{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / &nbsp;<span>{card.venta.toFixed(2)}$</span>
          </p>
           <p className="vC">Compra / Venta</p>
         </div>
@@ -108,7 +108,7 @@ const Cards = () => {
             </p>
           </span>
           <p className="valores">
-          <span>{cryptoUSD && `${cryptoUSD.ask.toFixed(2)}$`}</span> / <span>{cryptoUSD && cryptoUSD.bid.toFixed(2)}$</span>
+          <span>{cryptoUSD && `${cryptoUSD.ask.toFixed(2)}$`}</span> / &nbsp;<span>{cryptoUSD && cryptoUSD.bid.toFixed(2)}$</span>
           </p>
           <p className="vC">Compra / Venta</p>
         </div>
