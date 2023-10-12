@@ -17,8 +17,8 @@
 :root {
     --success: #2965BE;
     --fail: #7E1D1D;
-    --background: #101010;
-    --lightBackground: #141414;
+    --background: #0b0b0b;
+    --lightBackground: #111111;
     --borderRadius: 1rem;   
     --borderRadiusSmall: 10px; 
     --borderColor: #282828;
@@ -32,7 +32,7 @@
 }
 
 body {
-    background-color: #101010;
+    background-color: var(--background);
     margin: 0;
     overflow-x: hidden;
 }
@@ -58,7 +58,7 @@ section {
 }
 
 .cards:hover {
-    background-color: #141414af;
+    background-color: #141414c9;
     cursor: pointer;
 }
 
@@ -154,7 +154,7 @@ a {
 }
   
 .zero-bg {
-    background-color: var(--background);
+    background-color: var(--fail);
 }  
 
 .nullSpan {

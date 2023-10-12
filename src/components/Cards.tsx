@@ -59,7 +59,7 @@ const Cards = () => {
     { value: variacion.ccl_var || '0.00', label: 'CCL Var' },
     { value: '0.00', label: 'Empty' },
   ]; 
-  
+
   return (
     <section>
       {/* While the apis are being loaded, return 6 Skeleton cards*/}
@@ -89,7 +89,7 @@ const Cards = () => {
           <span className="nullSpan">{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / &nbsp;<span>{card.venta.toFixed(2)}$</span>
          </p>
           <p className="vC">Compra / Venta</p>
-        </div>
+        </div>   
       ))}
 
       {/* Show the last card as another rate that is not on the previous api,
@@ -113,6 +113,7 @@ const Cards = () => {
           <p className="vC">Compra / Venta</p>
         </div>
       )}
+     
     </section>
   );
 };

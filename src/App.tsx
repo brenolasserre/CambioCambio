@@ -27,7 +27,7 @@ function App() {
     <div>
       <Navbar euroBlueValue={euroBlueValue} date={date} />
       <Cards  />
-      <MobileCard euroBlueValue={euroBlueValue} date={date} />
+       <MobileCard euroBlueValue={euroBlueValue} date={date} />
     </div>
   );
 }
