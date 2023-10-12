@@ -14,6 +14,16 @@
     background: #454545;
 }
 
+:root {
+    --success: #2965BE;
+    --fail: #7E1D1D;
+    --background: #101010;
+    --lightBackground: #141414;
+    --borderRadius: 1rem;   
+    --borderRadiusSmall: 10px; 
+    --borderColor: #282828;
+  }
+
 /* Estilos generales */
 * {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -38,29 +48,29 @@ section {
 }
 
 .cards {
-    background-color: #141414;
-    border-radius: 1rem;
+    background-color: var(--lightBackground);
+    border-radius: var(--borderRadius);
     width: 22%;
     padding: 1.5em;
     text-align: center;
-    outline: 1px solid #282828;
+    outline: 1px solid var(--borderColor);
     transition: background .08s linear;
 }
 
 .cards:hover {
-    background-color: #1c1c1c;
+    background-color: #141414af;
     cursor: pointer;
 }
 
 .cards:nth-child(1), .cards:nth-child(2){
-    outline: 1px solid #4d4d4d;
+    outline: 1px solid #424242;
 }
 
-.valores {
+.title {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 0;
+    align-items: center;
+    gap: .5em;
 }
 
 .valores span {
@@ -83,8 +93,9 @@ a {
 
 .vC {
     background: #0f0f0f;
-    padding: 0.2em;
-    border-radius: 10px;
+    padding: 0.4em 0.2em;
+    font-size: 16px;
+    border-radius: var(--borderRadiusSmall);
     width: 100%;
 }
 
@@ -126,7 +137,7 @@ a {
 
 .variacion {
     color: white;
-    border-radius: 10px;
+    border-radius: var(--borderRadiusSmall);
     width: 22%;
     padding: 4px;
     font-size: 13px;
@@ -135,20 +146,24 @@ a {
 }
 
 .positive-bg {
-    background-color: #2965BE;
+    background-color: var(--success)
 }
   
 .negative-bg {
-    background-color: #7E1D1D;
+    background-color: var(--fail);
 }
   
 .zero-bg {
-    background-color: #0f0f0f;
+    background-color: var(--background);
 }  
+
+.nullSpan {
+    width: 35% !important;
+}
 
 .null{
     display: inline-block;
-    width: 50px !important;
+    width: 90% !important;
     background-color: #0F0F0F;
     padding: 4px;
     height: 8px !important;
@@ -164,19 +179,20 @@ a {
 }
 
 #mercado {
-    background-color: #2965be;
-    color: #a2ff91 !important;
+    background-color: var(--success);
     padding: 10px;
-    border-radius: 22px;
+    border-radius: var(--borderRadius);
     position: relative;
     cursor: pointer;
     display: inline-block;
 }
 
 #mercado.cerrado {
-    background-color: #7e1d1d;
-    padding: 10px;
-    border-radius: 22px;
+    background-color: var(--fail);
+}
+
+.mercadoSpan {
+    white-space: nowrap;
 }
 
 .status {
@@ -228,60 +244,16 @@ footer p  {
     margin-left: .5em;
 }
 
-#text {
-    white-space: nowrap;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5em;
-}
-
 i {
     margin-top: 1px;
 }
 
-.mobileInfo {
-    display: none;
-    border-radius: 1rem;
-    justify-content: space-evenly;
-    gap: 0.4em;
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 8em;
-}
-
-.mobileInfo .title p {
-    display: inline-block;
-    margin: 0.2em 0;
-}
-
-.mobileInfo .title {
-    margin: 0.2em .5em;
-}
-
-.mobileInfo .cards {
-    padding: 1.2em 1.5em;
-    background: #191919;
-}
-
-.mobileExtra {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.mobileExtra p {
-    font-size: 14px;
-}
-
 button {
-    background: #1a1a1a;
+    background: var(--lightBackground);
     border: 0;
     padding: 0.5em 2em;
-    border-radius: 20px;
-    outline: 1px solid #282828;
+    border-radius: var(--borderRadius);
+    outline: 1px solid var(--borderColor);
 }
 
 .mobileBottom {
@@ -292,16 +264,17 @@ button {
     color: #b7b4b4;
     font-size: 13.5px;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: var(--borderRadius);
 }
 
 /* Media queries */
 @media (max-width: 950px) {
     .null{
-        width: 5rem !important;
+        width: 6rem !important;
+        height: 12px !important;
     }    
     .cards {
-        border-radius: 1rem;
+        border-radius: var(--borderRadius);
         width: 80%;
         padding: 1em 1.5em;
         text-align: left;
@@ -313,8 +286,7 @@ button {
         font-size: 9px !important;
     }
     .vC {
-        padding: 0.4em 0.6em;
-        border-radius: 15px;
+        padding: .5em .8em;
         width: auto;
     }
     .valores span {
@@ -326,7 +298,6 @@ button {
     }
     .valores{
         margin-top: 5px;
-        justify-content: space-around;
     }
     .variacion{
         width: 24% !important;

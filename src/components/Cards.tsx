@@ -86,7 +86,7 @@ const Cards = () => {
             </p>
           </span>
           <p className="valores">
-          <span>{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / <span>{card.venta.toFixed(2)}$</span>
+          <span className="nullSpan">{card.compra ? `${card.compra.toFixed(2)}$` : <span className="null"> </span>}</span> / <span>{card.venta.toFixed(2)}$</span>
          </p>
           <p className="vC">Compra / Venta</p>
         </div>

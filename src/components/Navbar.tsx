@@ -38,7 +38,7 @@ function Navbar({ euroBlueValue, date }: NavbarProps) {
 
       <span id="mercado" className={mercadoClass}>
         <span className={`status ${isMarketOpen ? 'online' : 'offline'}`}></span>
-        <span id="text" style={{ color: textColor }} > {isMarketOpen ? 'Mercado Abierto' : 'Mercado Cerrado'}</span>
+        <span className="mercadoSpan" style={{ color: textColor }} > {isMarketOpen ? 'Mercado Abierto' : 'Mercado Cerrado'}</span>
       </span>
     </div>
     </>
