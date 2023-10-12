@@ -43,13 +43,21 @@ const Cards = () => {
     { value: '0.00', label: 'Empty' },
   ]; 
 
-  function calculateHoursPassed(fechaActualizacion: Date) {
+  function calculateTimePassed(fechaActualizacion: Date) {
     const fechaActualizacionDate = fechaActualizacion.getTime();
     const currentTime = new Date().getTime();
-    const timeDifferenceInMilliseconds = currentTime - fechaActualizacionDate;
-    const hoursPassed = Math.floor(timeDifferenceInMilliseconds / 3600000);
-    return hoursPassed;
-  } 
+    const timeDifferenceInSeconds = Math.floor((currentTime - fechaActualizacionDate) / 1000);
+  
+    if (timeDifferenceInSeconds < 60) {
+      return `Hace ${timeDifferenceInSeconds} segundo${timeDifferenceInSeconds !== 1 ? 's' : ''}`;
+    } else if (timeDifferenceInSeconds < 3600) {
+      const minutesPassed = Math.floor(timeDifferenceInSeconds / 60);
+      return `Hace ${minutesPassed} minuto${minutesPassed !== 1 ? 's' : ''}`;
+    } else {
+      const hoursPassed = Math.floor(timeDifferenceInSeconds / 3600);
+      return `Hace ${hoursPassed} hora${hoursPassed !== 1 ? 's' : ''}`;
+    }
+  }
   
   return (
     <section>
@@ -93,7 +101,7 @@ const Cards = () => {
                 <span>{card.venta.toFixed(2)}$</span> 
               </p>
               <p className="actualizacion">
-                Hace {calculateHoursPassed(new Date(card.fechaActualizacion))} hora{calculateHoursPassed(new Date(card.fechaActualizacion)) !== 1 ? 's' : ''}
+                  {calculateTimePassed(new Date(card.fechaActualizacion))}
               </p>
             </div>
           ))}
@@ -116,17 +124,25 @@ const Cards = () => {
               <p className="valores">
                 <span>{cryptoUSD && `${cryptoUSD.ask.toFixed(2)}$`}</span> / &nbsp;<span>{cryptoUSD && cryptoUSD.bid.toFixed(2)}$</span>
               </p>
-                <p className="actualizacion">
-                  {cryptoUSD && cryptoUSD.time && (
-                    (() => {
-                      const cryptoTimeInSeconds = cryptoUSD.time;
-                      const currentTimeInSeconds = Math.floor(Date.now() / 1000);
-                      const timeDifference = currentTimeInSeconds - cryptoTimeInSeconds;
+              <p className="actualizacion">
+                    {cryptoUSD && cryptoUSD.time && (
+                      (() => {
+                        const cryptoTimeInSeconds = cryptoUSD.time;
+                        const currentTimeInSeconds = Math.floor(Date.now() / 1000);
+                        const timeDifference = currentTimeInSeconds - cryptoTimeInSeconds;
 
-                      return `Hace ${timeDifference} segundos`;
-                    })()
-                  )}
-                </p>
+                        if (timeDifference < 60) {
+                          return `Hace ${timeDifference} segundo${timeDifference !== 1 ? 's' : ''}`;
+                        } else if (timeDifference < 3600) {
+                          const minutesPassed = Math.floor(timeDifference / 60);
+                          return `Hace ${minutesPassed} minuto${minutesPassed !== 1 ? 's' : ''}`;
+                        } else {
+                          const hoursPassed = Math.floor(timeDifference / 3600);
+                          return `Hace ${hoursPassed} hora${hoursPassed !== 1 ? 's' : ''}`;
+                        }
+                      })()
+                    )}
+                  </p>
             </div>
           )}
         </>

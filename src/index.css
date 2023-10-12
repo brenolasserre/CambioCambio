@@ -69,6 +69,10 @@ section {
     align-items: center;
     gap: .5em;
 }
+/* 
+.title p {
+    margin-bottom: 0;
+} */
 
 .valores span {
     font-size: 22.5px !important;
