@@ -97,11 +97,11 @@ a {
 
 #navBar {
     display: flex;
-    justify-content: space-evenly;
-    gap: 10rem;
+    justify-content: center;
     font-size: 12px;
     padding: 2em 0;
-    width: 100%;
+    width: 70%;
+    margin: 0 15%;
     position: fixed;
     background: transparent;
     backdrop-filter: blur(40px);
@@ -113,6 +113,15 @@ a {
 #navBar span {
     color: #b7b4b4;
     margin: 0 .5em;
+}
+
+.euroBlueValor {
+    padding: 10px;
+    margin-left: auto;
+    display: flex;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {
@@ -252,6 +261,7 @@ i {
         width: 85%;
         gap: 0.1em;
         padding: 2.5em 4em;
+        margin: 0;
         font-size: 9px !important;
     }
     .vC {
