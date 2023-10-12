@@ -27,6 +27,7 @@
 /* Estilos generales */
 * {
     font-family: 'Bricolage Grotesque', sans-serif;
+    font-display: swap;
     font-weight: 500;
     color: white;
 }

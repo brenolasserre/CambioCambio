@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="img/icon2.svg" alt="Logo" width="80" height="80">
+    <img src="public/icon2.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">CambioCambio</h3>
@@ -29,7 +29,7 @@ APIs Usadas:
 - [x] Diseño responsive
 - [x] Fetch APIs
 - [x] Mercado Abierto/Cerrado
-- [ ] Skeleton Loader con React
+- [X] Skeleton Loaders con React
 - [ ] Twitter Bot
 
 <br>
