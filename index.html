@@ -14,5 +14,10 @@
       <p>Creado por Breno Lasserre <a href="https://github.com/lasserrebreno/CambioCambio" target="_blank"><i class="bi bi-github"></i></a> </p>
       <p>©<span id="year"></span> CambioCambio</p>
     </footer>
+    <script>
+      const date = new Date();
+      let year = date.getFullYear();
+      document.getElementById("year").innerHTML = year;
+      </script>
   </body>
 </html>

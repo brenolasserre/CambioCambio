@@ -4,11 +4,9 @@ const SkeletonCard = () => {
     
     return (
         <div className="skeleton-wrapper">
-            <div className="skeleton-article">
                 <SkeletonElement type={"title"} />
                 <SkeletonElement type={"text"} />
                 <SkeletonElement type={"text"} /> 
-            </div>
         </div>
     )
 }
