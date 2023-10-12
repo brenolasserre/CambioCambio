@@ -18,7 +18,7 @@
     --success: #2965BE;
     --fail: #7E1D1D;
     --background: #0b0b0b;
-    --lightBackground: #111111;
+    --lightBackground: #111111ad;
     --borderRadius: 1rem;   
     --borderRadiusSmall: 10px; 
     --borderColor: #282828;
@@ -58,12 +58,8 @@ section {
 }
 
 .cards:hover {
-    background-color: #141414c9;
+    background-color: #121212dc;
     cursor: pointer;
-}
-
-.cards:nth-child(1), .cards:nth-child(2){
-    outline: 1px solid #424242;
 }
 
 .title {
