@@ -164,7 +164,7 @@ a {
 .null{
     display: inline-block;
     width: 6rem !important;
-    background-color: #0F0F0F;
+    background-color: var(--background);
     padding: 4px;
     height: 8px !important;
     margin: 0 !important;
