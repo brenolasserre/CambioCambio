@@ -162,7 +162,7 @@ a {
 }
   
 .zero-bg {
-    background-color: var(--fail);
+    background-color: var(--background);
 }  
 
 .nullSpan {

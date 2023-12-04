@@ -67,35 +67,43 @@ const Cards = () => {
       {/* Show all USD rates except for the last one "Mayorista" because it is not needed */}
       {!loading && cards.length > 0 && (
         <>
-          {cards.slice(0, cards.length - 1).map((card, index) => (
+          {cards.slice(0, cards.length - 2).map((card, index) => (
             <div className="cards" key={index}>
               <span className="title">
                 {card.nombre === "Contado con liquidación" ? (
                   <p>Dolar <span>CCL</span></p>
-                ) : card.nombre === "Solidario (Turista)" ? (
+                ) : card.nombre === "Solidario" ? (
                   <p>Dolar <span>Turista</span></p>
                 ) : card.nombre === "Bolsa" ? (
                   <p>Dolar <span>MEP</span></p>
                 ) : (
                   <p>Dolar <span>{card.nombre}</span></p>
-                )}
-                <p className={`variacion ${parseFloat(cardVariationMap[index].value as string) === 0 ? 'zero-bg' : parseFloat(cardVariationMap[index].value as string) > 0 ? 'positive-bg' : 'negative-bg'}`}>
-                  {parseFloat(cardVariationMap[index].value as string) > 0 ? (
-                    <i className="bi bi-arrow-up-short"></i>
-                  ) : parseFloat(cardVariationMap[index].value as string) < 0 ? (
-                    <i className="bi bi-arrow-down-short"></i>
+                )}               
+
+                <p className={`variacion ${
+                  parseFloat(String(cardVariationMap[index]?.value)) > 0
+                    ? 'positive-bg'
+                    : parseFloat(String(cardVariationMap[index]?.value)) < 0
+                    ? 'negative-bg'
+                    : 'zero-bg'
+                }`}>
+                  {typeof cardVariationMap[index]?.value === 'number' ? (
+                    parseFloat(String(cardVariationMap[index]?.value)) !== 0 ? (
+                      <i className={`bi bi-arrow-${parseFloat(String(cardVariationMap[index]?.value)) > 0 ? 'up' : 'down'}-short`}></i>
+                    ) : null
                   ) : null}
-                  {cardVariationMap[index].value}%
+                  {cardVariationMap[index]?.value}%
                 </p>
+
               </span>
               <p className="valores">
                 <span className="nullSpan">
-                  {card.nombre === "Solidario (Turista)" ? (
+                  {card.nombre === "Turista" ? (
                     cards[0].compra !== null ? `${cards[0].compra.toFixed(2)}$` : "N/A"
                   ) : card.compra !== null ? (
                     `${card.compra.toFixed(2)}$`
                   ) : (
-                    <span className="null">N/A</span>
+                    <span className="null"></span>
                   )}
                 </span> / &nbsp;
                 <span>{card.venta.toFixed(2)}$</span> 
