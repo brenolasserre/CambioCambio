@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import React from 'react';
+import React from "react";
 
 interface DolarItem {
   nombre: string;
@@ -19,9 +19,6 @@ const Dolares: React.FC = () => {
   const [dolar, setDolar] = useState<DolarItem[]>([]);
   const [variacion, setVariacion] = useState<VariacionItem[]>([]);
 
-
-
-  
   //   Fetch DolarApi para obtener Compra y Venta
   useEffect(() => {
     async function getData() {
@@ -76,15 +73,21 @@ const Dolares: React.FC = () => {
     const date = new Date(dateString);
     const now = new Date();
     const utcOffsetMinutes = now.getTimezoneOffset();
-    const adjustedDate = new Date(date.getTime() - utcOffsetMinutes * 60 * 1000);
+    const adjustedDate = new Date(
+      date.getTime() - utcOffsetMinutes * 60 * 1000
+    );
     // Use getTime() to ensure TypeScript recognizes these as numbers
-    const diffSeconds = Math.round((now.getTime() - adjustedDate.getTime()) / 1000);
+    const diffSeconds = Math.round(
+      (now.getTime() - adjustedDate.getTime()) / 1000
+    );
     if (diffSeconds <= 1) return "hace unos segundos";
     else if (diffSeconds < 60) return `hace ${diffSeconds} segundos`;
     else if (diffSeconds < 120) return "hace un minuto";
-    else if (diffSeconds < 3600) return `hace ${Math.floor(diffSeconds / 60)} minutos`;
+    else if (diffSeconds < 3600)
+      return `hace ${Math.floor(diffSeconds / 60)} minutos`;
     else if (diffSeconds < 7200) return "hace una hora";
-    else if (diffSeconds < 86400) return `hace ${Math.floor(diffSeconds / 3600)} horas`;
+    else if (diffSeconds < 86400)
+      return `hace ${Math.floor(diffSeconds / 3600)} horas`;
     else if (diffSeconds < 172800) return "ayer";
     else return `hace ${Math.floor(diffSeconds / 86400)} días`;
   };
@@ -112,13 +115,12 @@ const Dolares: React.FC = () => {
             let valoresClass = "";
             const variationValue = parseFloat(
               (
-                (
-                  getVentaValue(item.nombre) /
+                (getVentaValue(item.nombre) /
                   (variacion.find(
                     (v) => v.casa === item.casa.toLowerCase().split(" ")[0]
-                  )?.venta ?? 0) 
-                  - 1
-                ) * 100
+                  )?.venta ?? 0) -
+                  1) *
+                100
               ).toFixed(2)
             );
             if (variationValue > 0) {
@@ -156,13 +158,13 @@ const Dolares: React.FC = () => {
                     variationValue !== undefined &&
                     variationValue > 0 ? (
                       <img
-                        src="../../public/trendUp.svg"
+                        src="../../trendUp.svg"
                         alt="up"
                         className="h-4 w-4"
                       />
                     ) : variationValue < 0 ? (
                       <img
-                        src="../../public/trendDown.svg"
+                        src="../../trendDown.svg"
                         alt="up"
                         className="h-4 w-4"
                       />
@@ -199,6 +201,6 @@ const Dolares: React.FC = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Dolares;
