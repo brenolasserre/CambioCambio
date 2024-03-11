@@ -1,4 +1,4 @@
-import Crypto from "Crypto";
+import Crypto from "./componentes/Crypto";
 import Dolares from "./componentes/Dolares";
 
 function App() {
