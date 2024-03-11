@@ -23,7 +23,7 @@ const Crypto = () => {
         }
 
         .animate-marquee {
-          animation: marquee-animation 20s linear infinite;
+          animation: marquee-animation 10s linear infinite;
         }
       `}</style>
     </div>

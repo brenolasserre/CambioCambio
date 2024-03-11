@@ -1,5 +1,4 @@
-// @ts-expect-error TSERROR
-import Crypto from "./componentes/Crypto";
+import Crypto from "Crypto";
 import Dolares from "./componentes/Dolares";
 
 function App() {
