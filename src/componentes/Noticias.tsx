@@ -34,11 +34,11 @@ const Crypto: React.FC<CryptoProps> = () => {
 
   return (
     <div className="mx-8 mt-20">
-      <h1 className="mx-0 lg:mx-[11.5vw] text-3xl font-extrabold text-[#E5ECFF] mt-12">
+      <h1 className="mx-0 lg:mx-[11.5vw] text-3xl font-extrabold text-textColor mt-12">
         Noticias
       </h1>
 
-      <div className="relative bg-[#0C1324] h-[30em] rounded-t-2xl overflow-hidden mt-12 lg:mx-[12vw]"></div>
+      <div className="relative bg-[#0C1324] border border-[#1D2639] h-[30em] rounded-t-2xl overflow-hidden mt-12 lg:mx-[11.5vw]"></div>
     </div>
   );
 };

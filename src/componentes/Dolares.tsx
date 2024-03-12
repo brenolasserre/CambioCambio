@@ -104,7 +104,7 @@ const Dolares: React.FC = () => {
 
   return (
     <div className="mx-8">
-      <h1 className="mx-0 lg:mx-[11.5vw] text-3xl font-extrabold text-[#E5ECFF] mt-12 ">
+      <h1 className="mx-0 lg:mx-[11.5vw] text-3xl font-extrabold text-textColor mt-12 ">
         Dolar
       </h1>
       <section className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 mt-12 mx-auto">
@@ -132,15 +132,15 @@ const Dolares: React.FC = () => {
               valoresClass = "text-warningColor";
             } else {
               variationClass = "text-textColor  bg-textColorBackground";
-              valoresClass = "text-textColor";
+              valoresClass = "text-textColorSecondary";
             }
 
             return (
               <div
                 key={item.casa}
-                className="bg-[#0C1324] text-[#D7FFF3] w-full lg:w-1/4 px-8 py-6 rounded-[15px] flex flex-col gap-4"
+                className="bg-[#0C1324] text-[#D7FFF3] border border-[#1D2639] w-full lg:w-1/4 px-8 py-6 rounded-[15px] flex flex-col gap-4"
               >
-                <div className="text-[#E5ECFF] text-[20px] font-bold flex justify-between items-center">
+                <div className="text-textColor text-[20px] font-bold flex justify-between items-center">
                   <div className="cambio">
                     Dolar &nbsp;
                     {item.nombre === "Contado con liquidación" ? (
@@ -194,7 +194,7 @@ const Dolares: React.FC = () => {
                 </div>
 
                 <div>
-                  <p className="text-textColorSecondary text-[12px] font-semibold">
+                  <p className="text-textColorTerciary text-[12px] font-semibold">
                     {formatTimeAgo(item.fechaActualizacion)}
                   </p>
                 </div>

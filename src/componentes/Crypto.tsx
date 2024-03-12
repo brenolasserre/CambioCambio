@@ -46,7 +46,7 @@ const Crypto: React.FC<CryptoProps> = () => {
         className="overflow-hidden ml-0 mr-0 mt-12 mx-8 lg:mx-[12vw] lg:w-[72vw] w-full inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
       >
         {/* Gradient */}
-        <ul className="my-auto h-8 flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none infinite-scroll text-[#E5ECFF]">
+        <ul className="my-auto h-8 flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none infinite-scroll text-textColor">
           {Monedas.map((currencyCode, index) => {
             const data = cryptoData[currencyCode]?.data?.[0];
             const price = parseFloat(data?.last || "0").toFixed(2);
@@ -98,7 +98,7 @@ const Crypto: React.FC<CryptoProps> = () => {
             );
           })}
         </ul>
-        <ul className="my-auto h-8 flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none infinite-scroll text-[#E5ECFF]">
+        <ul className="my-auto h-8 flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none infinite-scroll text-textColor">
           {Monedas.map((currencyCode, index) => {
             const data = cryptoData[currencyCode]?.data?.[0];
             const price = parseFloat(data?.last || "0").toFixed(2);
