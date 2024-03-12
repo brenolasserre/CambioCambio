@@ -42,7 +42,7 @@ const Dolares: React.FC = () => {
   //   Fetch ArgentinaDatos para obtener la variacion
   useEffect(() => {
     const today = new Date();
-    today.setDate(today.getDate() - 2);
+    today.setDate(today.getDate() - 1);
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
@@ -104,7 +104,7 @@ const Dolares: React.FC = () => {
 
   return (
     <div className="mx-8">
-      <h1 className="mx-0 lg:mx-[12vw] text-3xl font-extrabold text-[#E5ECFF] mt-12 ">
+      <h1 className="mx-0 lg:mx-[11.5vw] text-3xl font-extrabold text-[#E5ECFF] mt-12 ">
         Dolar
       </h1>
       <section className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 mt-12 mx-auto">
@@ -124,7 +124,7 @@ const Dolares: React.FC = () => {
                 100
               ).toFixed(2)
             );
-            if (variationValue > 0) {
+            if (variationValue > 0.1) {
               variationClass = "text-successColor bg-successBackground";
               valoresClass = "text-successColor";
             } else if (variationValue < 0) {
@@ -157,7 +157,7 @@ const Dolares: React.FC = () => {
                   >
                     {variationValue !== null &&
                     variationValue !== undefined &&
-                    variationValue > 0 ? (
+                    variationValue > 0.1 ? (
                       <img
                         src="../../trendUp.svg"
                         alt="up"
@@ -174,9 +174,11 @@ const Dolares: React.FC = () => {
                     )}
                     <span>
                       {variationValue !== null && variationValue !== undefined
-                        ? variationValue > 0
+                        ? variationValue > 0.1
                           ? `+${variationValue.toFixed(2)}%`
-                          : `${variationValue.toFixed(2)}%`
+                          : variationValue < 0
+                          ? `${variationValue.toFixed(2)}%`
+                          : "0.00%"
                         : ""}
                     </span>
                   </div>
