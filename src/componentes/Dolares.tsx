@@ -153,7 +153,7 @@ const Dolares: React.FC = () => {
                   </div>
 
                   <div
-                    className={`relative ${variationClass} flex items-center justify-center gap-1 px-3 py-1 text-xs rounded-full`}
+                    className={`relative ${variationClass} flex items-center justify-center gap-1 px-3 py-1 text-xs rounded-full `}
                   >
                     {variationValue !== null &&
                     variationValue !== undefined &&

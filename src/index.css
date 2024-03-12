@@ -22,11 +22,13 @@
 @font-face {
   font-family: "Inter";
   src: url("../Fonts/Inter/Inter.ttf") format("truetype");
+  font-weight: medium;
 }
 
 @font-face {
   font-family: "Oi";
   src: url("../Fonts/Oi/Oi-Regular.ttf") format("truetype");
+  font-weight: medium;
 }
 
 body {
