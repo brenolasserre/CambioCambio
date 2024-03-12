@@ -99,13 +99,14 @@ const Dolares: React.FC = () => {
         d.nombre === currencySymbol + " MEP" ||
         d.nombre === currencySymbol + " CCL"
     );
-    // Ensure the venta value is parsed as a number and provide a default value of 0 if necessary
     return currency ? parseFloat(currency.venta) : 0;
   };
 
   return (
     <div className="mx-8">
-      <h1 className="text-3xl font-extrabold text-[#E5ECFF] mt-12 ">Dolar</h1>
+      <h1 className="mx-0 lg:mx-[12vw] text-3xl font-extrabold text-[#E5ECFF] mt-12 ">
+        Dolar
+      </h1>
       <section className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 mt-12 mx-auto">
         {/* Sacar el Dolar Mayorista */}
         {dolar
@@ -183,10 +184,10 @@ const Dolares: React.FC = () => {
 
                 <div className={`valores ${valoresClass}`}>
                   <p className="fuente m-0">
-                    {parseFloat(item.compra).toFixed(2)}
+                    ${parseFloat(item.compra).toFixed(2)}
                   </p>
                   <p className="fuente m-0">
-                    {parseFloat(item.venta).toFixed(2)}
+                    ${parseFloat(item.venta).toFixed(2)}
                   </p>
                 </div>
 
