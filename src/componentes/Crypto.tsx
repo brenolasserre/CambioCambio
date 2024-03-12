@@ -153,12 +153,18 @@ const Crypto: React.FC<CryptoProps> = () => {
         <style>
           {`
           @keyframes infinite-scroll {
-            0% { transform: translateX(0%) opacity: 0 }
-            5% { transform: translateX(5%) opacity: 1 }
+            0% { transform: translateX(0%) }
+            5% { transform: translateX(5%) }
             100% { transform: translateX(-100%); }
           }
 
-          .infinite-scroll { animation: infinite-scroll 18s linear infinite; }
+          @-webkit-keyframes infinite-scroll {
+            0% { -webkit-transform: translateX(0%)}
+            5% { -webkit-transform: translateX(5%) }
+            100% { -webkit-transform: translateX(-100%); }
+                    
+
+          .infinite-scroll { animation: infinite-scroll 18s linear infinite;  -webkit-animation: infinite-scroll 18s linear infinite; }
         `}
         </style>
       </div>
