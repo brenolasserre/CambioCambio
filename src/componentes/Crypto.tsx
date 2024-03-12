@@ -44,7 +44,7 @@ const Crypto: React.FC<CryptoProps> = () => {
         {/* Gradient */}
         <div className="absolute inset-0 z-50 bg-gradient-to-r from-[#030712] via-[transparent] to-[#030712]"></div>
 
-        <div className="my-auto flex w-full justify-between relative whitespace-nowrap animate-marquee text-textColor">
+        <div className="my-auto h-8 flex w-full justify-between relative whitespace-nowrap animate-marquee text-textColor">
           {Monedas.map((currencyCode, index) => {
             const data = cryptoData[currencyCode]?.data?.[0];
             const price = parseFloat(data?.last || "0").toFixed(2);
@@ -65,39 +65,48 @@ const Crypto: React.FC<CryptoProps> = () => {
             };
 
             return (
-              <div key={index} className="flex items-center mr-20 text-white">
-                <img
-                  src={getIconPath(currencyCode)}
-                  alt={`${currencyCode} icon`}
-                  className="mr-2 w-5 h-5"
-                />
-                {data && (
-                  <>
-                    {`${currencyCode} $${price}`}
-                    <span
-                      className={`${getChangeClass()} flex items-center justify-center gap-1 px-2 ml-2 py-[3px] text-xs rounded-full`}
-                    >
-                      {parseFloat(changePercent) !== 0 &&
-                        `${
-                          parseFloat(changePercent) > 0 ? "+" : ""
-                        }${changePercent}%`}
-                    </span>
-                  </>
-                )}
-              </div>
+              <>
+                <div
+                  key={index}
+                  className="flex items-center mr-20 text-white animate-marquee"
+                >
+                  <img
+                    src={getIconPath(currencyCode)}
+                    alt={`${currencyCode} icon`}
+                    className="mr-2 w-5 h-5"
+                  />
+                  {data && (
+                    <>
+                      <b className="mr-1">{`${currencyCode}`}</b>
+                      {`$${price}`}
+                      <span
+                        className={`${getChangeClass()} flex items-center justify-center gap-1 px-2 ml-2 py-[3px] text-xs rounded-full`}
+                      >
+                        {parseFloat(changePercent) !== 0 &&
+                          `${
+                            parseFloat(changePercent) > 0 ? "+" : ""
+                          }${changePercent}%`}
+                      </span>
+                    </>
+                  )}
+                </div>
+              </>
             );
           })}
         </div>
+
         <style>
           {`
 
           
             @keyframes marquee-animation {
-              0% { transform: translateX(100%); }
+              0% { transform: translateX(100%); opacity: 0 }
+              2% { transform: translateX(98%); opacity: 0.5 }
+              5% { transform: translateX(95%); opacity: 1 }
               100% { transform: translateX(-100%); }
             }
 
-            .animate-marquee { animation: marquee-animation 10s linear infinite; }
+            .animate-marquee { animation: marquee-animation 16s linear infinite; }
           `}
         </style>
       </div>

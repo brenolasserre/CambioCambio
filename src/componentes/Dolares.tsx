@@ -175,8 +175,8 @@ const Dolares: React.FC = () => {
                     <span>
                       {variationValue !== null && variationValue !== undefined
                         ? variationValue > 0
-                          ? `+${variationValue.toFixed(2)} %`
-                          : `${variationValue.toFixed(2)} %`
+                          ? `+${variationValue.toFixed(2)}%`
+                          : `${variationValue.toFixed(2)}%`
                         : ""}
                     </span>
                   </div>
@@ -184,10 +184,10 @@ const Dolares: React.FC = () => {
 
                 <div className={`valores ${valoresClass}`}>
                   <p className="fuente m-0">
-                    ${parseFloat(item.compra).toFixed(2)}
+                    ${parseFloat(item.venta).toFixed(2)}
                   </p>
                   <p className="fuente m-0">
-                    ${parseFloat(item.venta).toFixed(2)}
+                    ${parseFloat(item.compra).toFixed(2)}
                   </p>
                 </div>
 
